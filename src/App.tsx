@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <QueryClientProvider client={new QueryClient()}>
-        <Suspense fallback={<div>gay</div>}>
+        <Suspense fallback={<div>ur gay</div>}>
           <Questionnaire scoreDimension={1} />
         </Suspense>
       </QueryClientProvider>
