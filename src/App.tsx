@@ -102,7 +102,7 @@ function Questionnaire({ scoreDimension }) {
         (step > 0) ?
 
         <div className="fixed">
-          <button onClick={lastStep} className="">LAST QUESTION</button>
+          <button onClick={lastStep} className="">BACK</button>
         </div> : null
       }
       {(step < questions.length) ?
