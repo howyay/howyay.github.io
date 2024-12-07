@@ -1,0 +1,100 @@
+scales:
+  - InverseLikertScale: &ILikert
+      - option: "Strongly Agree"
+        score: 1
+      - option: "Agree"
+        score: 2
+      - option: "Neutral"
+        score: 3
+      - option: "Disagree"
+        score: 4
+      - option: "Strongly Disagree"
+        score: 5
+  - LikertScale: &Likert
+      - option: "Strongly Agree"
+        score: 5
+      - option: "Agree"
+        score: 4
+      - option: "Neutral"
+        score: 3
+      - option: "Disagree"
+        score: 2
+      - option: "Strongly Disagree"
+        score: 1
+
+default_question: &default_question
+  scale: *Likert
+  scoreDimension: 0
+  # compoundingFn current unused
+  compoundingFn: "sum"
+
+questions:
+  - text: I know when to speak about my personal problems to others
+    <<: *default_question
+  - text: When I am faced with obstacles, I remember times I faced similar obstacles and overcame them
+    <<: *default_question
+  - text: I expect that I will do well on most things I try
+    <<: *default_question
+  - text: Other people find it easy to confide in me
+    <<: *default_question
+  - text: I find it hard to understand the non-verbal messages of other people*
+    <<: *default_question
+    scale: *ILikert
+  - text: Some of the major events of my life have led me to re-evaluate what is important and not important
+    <<: *default_question
+  - text: When my mood changes, I see new possibilities
+    <<: *default_question
+  - text: Emotions are one of the things that make my life worth living
+    <<: *default_question
+  - text: I am aware of my emotions as I experience them
+    <<: *default_question
+  - text: I expect good things to happen
+    <<: *default_question
+  - text: I like to share my emotions with others
+    <<: *default_question
+  - text: When I experience a positive emotion, I know how to make it last
+    <<: *default_question
+  - text: I arrange events others enjoy
+    <<: *default_question
+  - text: I seek out activities that make me happy
+    <<: *default_question
+  - text: I am aware of the non-verbal messages I send to others
+    <<: *default_question
+  - text: I present myself in a way that makes a good impression on others
+    <<: *default_question
+  - text: When I am in a positive mood, solving problems is easy for me
+    <<: *default_question
+  - text: By looking at their facial expressions, I recognize the emotions people are experiencing
+    <<: *default_question
+  - text: I know why my emotions change
+    <<: *default_question
+  - text: When I am in a positive mood, I am able to come up with new ideas
+    <<: *default_question
+  - text: I have control over my emotions
+    <<: *default_question
+  - text: I easily recognize my emotions as I experience them
+    <<: *default_question
+  - text: I motivate myself by imagining a good outcome to tasks I take on
+    <<: *default_question
+  - text: I compliment others when they have done something well
+    <<: *default_question
+  - text: I am aware of the non-verbal messages other people send
+    <<: *default_question
+  - text: When another person tells me about an important event in his or her life, I almost feel as though I have experienced this event myself
+    <<: *default_question
+  - text: When I feel a change in emotions, I tend to come up with new ideas
+    <<: *default_question
+  - text: When I am faced with a challenge, I give up because I believe I will fail*
+    <<: *default_question
+    scale: *ILikert
+  - text: I know what other people are feeling just by looking at them
+    <<: *default_question
+  - text: I help other people feel better when they are down
+    <<: *default_question
+  - text: I use good moods to help myself keep trying in the face of obstacles
+    <<: *default_question
+  - text: I can tell how people are feeling by listening to the tone of their voice
+    <<: *default_question
+  - text: It is difficult for me to understand why people feel the way they do*
+    <<: *default_question
+    scale: *ILikert
