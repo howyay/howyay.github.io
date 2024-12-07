@@ -1,9 +1,9 @@
 scales:
   - YesOrNo: &YesOrNo
       - option: "Yes"
-        score: 1
-      - option: "No"
         score: 0
+      - option: "No"
+        score: 1
 
 default_question: &default_question
   scale: *YesOrNo
