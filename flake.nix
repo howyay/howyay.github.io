@@ -11,9 +11,9 @@
       devShell.packages = pkgs:
         with pkgs; [
           alejandra
-          deno
           yaml-language-server
           typescript-language-server
+          bun
           tailwindcss
           tailwindcss-language-server
         ];

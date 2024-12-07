@@ -1,5 +1,4 @@
 import './App.css'
-// @deno-types="@types/react"
 import React, { useState, Suspense } from 'react'
 import { parse, stringify } from 'yaml';
 import { useSuspenseQuery, QueryClient, QueryClientProvider, Query } from '@tanstack/react-query';
