@@ -1,0 +1,14 @@
+[project]
+authors = ["howyay <28365438+howyay@users.noreply.github.com>"]
+channels = ["conda-forge"]
+description = "Add a short description here"
+name = "howyay.github.io"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+jsonschema = ">=4.23.0,<5"
+python = ">=3.13.1,<4"
+pyyaml = ">=6.0.2,<7"
