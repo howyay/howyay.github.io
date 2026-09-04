@@ -71,7 +71,7 @@ function Questionnaire({ scoreDimension }: { scoreDimension: number }) {
 
   const questionnaire = useSuspenseQuery({
     queryKey: ['yamlData'],
-    queryFn: () => fetchYaml('https://raw.githubusercontent.com/howyay/int_sreit/refs/heads/main/sreit.yaml'),
+    queryFn: () => fetchYaml('sreit.yaml'), // served from public/ — data vendored from howyay/int_sreit, now retired
   }).data;
   let questions = questionnaire.questions;
 
