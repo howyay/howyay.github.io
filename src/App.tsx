@@ -2,8 +2,8 @@ import './App.css'
 import React, { useState, Suspense } from 'react'
 import { parse, stringify } from 'yaml';
 import { useSuspenseQuery, QueryClient, QueryClientProvider, Query } from '@tanstack/react-query';
+// @ts-expect-error No type declarations shipped for jstat
 import jStat from 'jstat';
-// @ts-expect-error Unable to infer type at the moment
 import reactLogo from './assets/react.svg'
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
   )
 }
 
-function Answer({ scale, nextStep }) {
+function Answer({ scale, nextStep }: { scale: { option: string; score: number }[]; nextStep: (score: number) => void }) {
   return (
     <>
       <div className="flex flex-col gap-2 col-start-5 col-end-9">
@@ -30,7 +30,7 @@ function Answer({ scale, nextStep }) {
   )
 }
 
-function Question({ text, answer }) {
+function Question({ text, answer }: { text: string; answer: React.ReactNode }) {
   return (
     <>
       <div className="col-span-12 place-self-center text-3xl">
@@ -41,8 +41,8 @@ function Question({ text, answer }) {
   )
 }
 
-function Result({ score }) {
-  let calculatePercentile = (score, mean, standardDeviation) => {
+function Result({ score }: { score: number }) {
+  let calculatePercentile = (score: number, mean: number, standardDeviation: number) => {
     const zScore = (score - mean) / standardDeviation;
     const percentile = jStat.normal.cdf(zScore, 0, 1) * 100; // Convert to percentage
     return percentile;
@@ -61,7 +61,7 @@ function Result({ score }) {
   )
 }
 
-function Questionnaire({ scoreDimension }) {
+function Questionnaire({ scoreDimension }: { scoreDimension: number }) {
   const fetchYaml = async (url: string) => {
     const response = await fetch(url);
     if (!response.ok) throw new Error('Failed to fetch YAML');
