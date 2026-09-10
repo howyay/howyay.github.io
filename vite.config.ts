@@ -1,9 +1,15 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { svelte } from '@sveltejs/vite-plugin-svelte';
+import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from 'vite';
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-  ],
-})
+  plugins: [tailwindcss(), svelte()],
+  resolve: { alias: { $lib: new URL('./src/lib', import.meta.url).pathname } },
+  appType: 'mpa',
+  build: {
+    outDir: 'build',
+    rolldownOptions: {
+      input: ['index.html', 'big-five/index.html', 'sreit/index.html', 'rice/index.html']
+    }
+  }
+});
